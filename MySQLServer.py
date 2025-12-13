@@ -9,7 +9,7 @@ DATABASE = "alx_book_store"
 
 def create_database():
     PASSWORD = getpass.getpass ("Enter password: ")
-    conncetion = None
+    connection = None
     cursor = None
     
     try:
@@ -22,7 +22,7 @@ def create_database():
 
         cursor = connection.cursor()
 
-        sql_query = f"CREATE DATABASE IF NOT EXISTS {DATABASE}"
+        sql_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
 
         cursor.execute(sql_query)
 
@@ -45,7 +45,7 @@ def create_database():
             print (f"\n Error {error.errno}: {error.msg}")
             print (f"\n an unexpected error occurred during execution: {error}")
     except Exception as error:
-        print (f"\n a genral error occurred during execution: {error}")
+        print (f"\n a general error occurred during execution: {error}")
 
     finally:
         if cursor:
